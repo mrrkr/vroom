@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: { default: "vroom", template: "%s - vroom" },
   description: "Track yourself. All your personal stuff, in one place.",
   manifest: "/manifest.json",
-  icons: { icon: "/images.png", apple: "/images.png" },
+  icons: { icon: "/icon-192.png", apple: "/apple-touch-icon.png" },
   appleWebApp: { capable: true, title: "vroom", statusBarStyle: "black-translucent" },
 };
 
