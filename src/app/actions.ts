@@ -21,21 +21,21 @@ function fields(form: FormData) {
 
 export async function createNote(form: FormData) {
   const [row] = await db.insert(schema.notes).values(fields(form)).returning({ id: schema.notes.id });
-  revalidatePath("/");
+  revalidatePath("/explore");
   redirect(`/n/${row.id}`);
 }
 
 export async function updateNote(id: number, form: FormData) {
   await db.update(schema.notes).set({ ...fields(form), updatedAt: new Date() }).where(eq(schema.notes.id, id));
-  revalidatePath("/");
+  revalidatePath("/explore");
   revalidatePath(`/n/${id}`);
   redirect(`/n/${id}`);
 }
 
 export async function deleteNote(id: number) {
   await db.delete(schema.notes).where(eq(schema.notes.id, id));
-  revalidatePath("/");
-  redirect("/");
+  revalidatePath("/explore");
+  redirect("/explore");
 }
 
 export async function bumpViews(id: number) {

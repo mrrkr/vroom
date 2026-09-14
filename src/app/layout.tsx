@@ -25,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Navbar />
         <main className="flex-1 w-full max-w-[1200px] mx-auto px-2 sm:px-4 pb-10">{children}</main>
         <footer className="text-center text-muted text-[11px] py-4 border-t border-line">
-          <Link href="/">Explore</Link> - <Link href="/new">New note</Link>
+          <Link href="/explore">Explore</Link> - <Link href="/new">New note</Link>
         </footer>
       </body>
     </html>
