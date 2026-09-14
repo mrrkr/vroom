@@ -1,26 +1,36 @@
 @import "tailwindcss";
 
+/* erome-style palette: black ground, grey panels, pink accent */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #1b1b1b;
+  --panel: #232323;
+  --panel-2: #2d2d2d;
+  --line: #3a3a3a;
+  --text: #e6e6e6;
+  --muted: #9a9a9a;
+  --pink: #eb6395;
+  --pink-dark: #db467e;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-line: var(--line);
+  --color-ink: var(--text);
+  --color-muted: var(--muted);
+  --color-pink: var(--pink);
+  --color-pink-dark: var(--pink-dark);
+  --font-sans: var(--font-montserrat);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html { color-scheme: dark; }
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 13px;
 }
+a { color: inherit; }
+input, textarea, select { outline: none; }
+.svg-fa { width: 1em; height: 1em; fill: currentColor; display: inline-block; vertical-align: -0.125em; }
