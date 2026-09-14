@@ -29,7 +29,6 @@ export default async function NotePage(props: PageProps<"/n/[id]">) {
       </PageTitle>
       <div className="flex flex-wrap items-center gap-3 text-[11px] text-muted mb-4">
         <span><Icon name="i-eye" /> {note.views + (edit ? 0 : 1)}</span>
-        {note.noteDate && <Link href={`/dates?d=${note.noteDate}`} className="bg-pink text-black font-bold px-1.5 py-0.5 rounded-sm">{note.noteDate}</Link>}
         {note.tags.map((t) => <Link key={t} href={`/search?q=${encodeURIComponent(t)}`} className="hover:text-pink">#{t}</Link>)}
         <span>updated {note.updatedAt.toLocaleString()}</span>
         <span className="ml-auto flex gap-3">

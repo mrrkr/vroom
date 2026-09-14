@@ -15,9 +15,8 @@ function parseTags(raw: FormDataEntryValue | null) {
 function fields(form: FormData) {
   const title = String(form.get("title") ?? "").trim().slice(0, 200) || "Untitled";
   const body = String(form.get("body") ?? "").slice(0, 50_000);
-  const noteDate = String(form.get("noteDate") ?? "").trim() || null;
   const pinned = form.get("pinned") === "on";
-  return { title, body, noteDate, pinned, tags: parseTags(form.get("tags")) };
+  return { title, body, pinned, tags: parseTags(form.get("tags")) };
 }
 
 export async function createNote(form: FormData) {

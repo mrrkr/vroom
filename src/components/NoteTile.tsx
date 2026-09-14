@@ -16,9 +16,6 @@ export default function NoteTile({ note }: { note: Note }) {
         <span className="absolute bottom-1 right-1 bg-black/70 text-[10px] px-1.5 py-0.5 rounded-sm flex items-center gap-1">
           <Icon name="i-eye" />{note.views}
         </span>
-        {note.noteDate && (
-          <span className="absolute bottom-1 left-1 bg-pink text-black text-[10px] font-bold px-1.5 py-0.5 rounded-sm">{note.noteDate}</span>
-        )}
       </Link>
       <div className="mt-1.5 flex items-start gap-2">
         <div className="w-7 h-7 rounded-full bg-pink text-black font-bold flex items-center justify-center text-[12px] shrink-0 uppercase">

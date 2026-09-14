@@ -6,9 +6,8 @@ export default function NoteForm({ note, action, submitLabel }: { note?: Note; a
     <form action={action} className="flex flex-col gap-3 max-w-[800px]">
       <input name="title" defaultValue={note?.title} placeholder="Title" required maxLength={200} className={`${input} text-[16px] font-semibold`} />
       <textarea name="body" defaultValue={note?.body} placeholder="Write anything…" rows={14} className={`${input} font-mono leading-relaxed`} />
-      <div className="grid sm:grid-cols-3 gap-3">
+      <div className="grid sm:grid-cols-2 gap-3">
         <input name="tags" defaultValue={note?.tags.join(" ")} placeholder="tags: health money ideas" className={input} />
-        <input name="noteDate" type="date" defaultValue={note?.noteDate ?? ""} className={input} />
         <label className="flex items-center gap-2 text-[12px] uppercase font-bold tracking-wider text-muted">
           <input name="pinned" type="checkbox" defaultChecked={note?.pinned} className="accent-pink w-4 h-4" /> Pin to HOT
         </label>
