@@ -3,6 +3,7 @@ import { desc } from "drizzle-orm";
 import { TileGrid } from "@/components/NoteTile";
 import { Tabs, PageTitle } from "@/components/Tabs";
 import { Icon } from "@/components/Icons";
+import Gate from "@/components/Gate";
 
 export const dynamic = "force-dynamic";
 
@@ -14,6 +15,7 @@ export default async function Explore(props: PageProps<"/explore">) {
     .limit(120);
   return (
     <>
+      <Gate />
       <PageTitle><Icon name="i-fire" className="text-pink" /> Explore</PageTitle>
       <Tabs items={[{ href: "/explore", label: "Hot", active: !isNew }, { href: "/explore?o=new", label: "New", active: isNew }]} />
       <TileGrid notes={rows} empty="Nothing here yet. Hit New to add your first note." />
