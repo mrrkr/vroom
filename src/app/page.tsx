@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import Gate from "@/components/Gate";
 
 export default function Home() {
-  redirect("/explore");
+  return <Gate />;
 }
